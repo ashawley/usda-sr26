@@ -1,0 +1,97 @@
+CREATE TABLE `FOOD_DES` (
+`NDB_No` VARCHAR(5)  NOT NULL, 
+`FdGrp_Cd` VARCHAR(4)  NOT NULL, 
+`Long_Desc` VARCHAR(200)  NOT NULL, 
+`Shrt_Desc` VARCHAR(60)  NOT NULL, 
+`ComName` VARCHAR(100)  NULL, 
+`ManufacName` VARCHAR(65)  NULL, 
+`Survey` VARCHAR(1)  NULL, 
+`Ref_desc` VARCHAR(135)  NULL, 
+`Refuse` INTEGER(2)  NULL, 
+`SciName` VARCHAR(65)  NULL, 
+`N_Factor` DECIMAL(4,2)  NULL, 
+`Pro_Factor` DECIMAL(4,2)  NULL, 
+`Fat_Factor` DECIMAL(4,2)  NULL, 
+`CHO_Factor` DECIMAL(4,2)  NULL);
+
+CREATE TABLE `NUT_DATA` (
+`NDB_No` VARCHAR(5)  NOT NULL, 
+`Nutr_No` VARCHAR(3)  NOT NULL, 
+`Nutr_Val` DECIMAL(10,3)  NOT NULL, 
+`Num_Data_Pts` DECIMAL(5,0)  NOT NULL, 
+`Std_Error` DECIMAL(8,3)  NULL, 
+`Src_Cd` VARCHAR(2)  NOT NULL, 
+`Deriv_Cd` VARCHAR(4)  NULL, 
+`Ref_NDB_No` VARCHAR(5)  NULL, 
+`Add_Nutr_Mark` VARCHAR(1)  NULL, 
+`Num_Studies` INTEGER(2)  NULL, 
+`Min` DECIMAL(10,3)  NULL, 
+`Max` DECIMAL(10,3)  NULL, 
+`DF` INTEGER(2)  NULL, 
+`Low_EB` DECIMAL(10,3)  NULL, 
+`Up_EB` DECIMAL(10,3)  NULL, 
+`Stat_cmt` VARCHAR(10)  NULL, 
+`AddMod_Date` VARCHAR(10)  NULL, 
+`CC` VARCHAR(1)  NULL);
+
+
+CREATE TABLE `NUTR_DEF` (
+`Nutr_No` VARCHAR(3)  NOT NULL, 
+`Units` VARCHAR(7)  NOT NULL, 
+`Tagname` VARCHAR(20)  NULL, 
+`NutrDesc` VARCHAR(60)  NOT NULL, 
+`Num_Dec` VARCHAR(1)  NOT NULL, 
+`SR_Order` INTEGER(6)  NOT NULL);
+
+CREATE TABLE `WEIGHT` (
+`NDB_No` VARCHAR(5)  NOT NULL, 
+`Seq` VARCHAR(2)  NOT NULL, 
+`Amount` DECIMAL(5,3)  NOT NULL, 
+`Msre_Desc` VARCHAR(80)  NOT NULL, 
+`Gm_Wgt` DECIMAL(7,2)  NOT NULL, 
+`Num_Data_Pts` INTEGER(3)  NULL, 
+`Std_Dev` DECIMAL(7,3)  NULL);
+
+
+CREATE TABLE `FOOTNOTE` (
+`NDB_No` VARCHAR(5)  NOT NULL, 
+`Footnt_No` VARCHAR(4)  NOT NULL, 
+`Footnt_Typ` VARCHAR(1)  NOT NULL, 
+`Nutr_No` VARCHAR(3)  NULL, 
+`Footnt_Txt` VARCHAR(200)  NOT NULL);
+
+
+CREATE TABLE `FD_GROUP` (
+`FdGrp_Cd` VARCHAR(4)  NOT NULL, 
+`FdGrp_Desc` VARCHAR(60)  NOT NULL);
+
+
+CREATE TABLE `LANGUAL` (
+`NDB_No` VARCHAR(5)  NOT NULL, 
+`Factor_Code` VARCHAR(5)  NOT NULL);
+
+
+CREATE TABLE `LANGDESC` (
+`Factor_Code` VARCHAR(5)  NOT NULL, 
+`Description` VARCHAR(140)  NOT NULL);
+
+CREATE TABLE `SRC_CD` (
+`Src_Cd` VARCHAR(2)  NOT NULL, 
+`SrcCd_Desc` VARCHAR(60)  NOT NULL);
+
+
+CREATE TABLE `DERIV_CD` (
+`Deriv_Cd` VARCHAR(4)  NOT NULL, 
+`Deriv_Desc` VARCHAR(120)  NULL);
+
+
+CREATE TABLE `DATA_SRC` (
+`DataSrc_ID` VARCHAR(6)  NOT NULL, 
+`Authors` VARCHAR(255)  NULL, 
+`Title` VARCHAR(255)  NOT NULL, 
+`Year` VARCHAR(4)  NULL, 
+`Journal` VARCHAR(135)  NULL, 
+`Vol_City` VARCHAR(16)  NULL, 
+`Issue_State` VARCHAR(5)  NULL, 
+`Start_Page` VARCHAR(5)  NULL, 
+`End_Page` VARCHAR(5)  NULL);
