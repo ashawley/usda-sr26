@@ -7,12 +7,13 @@ different food items.  In July of 2013, they released
 [SR26](http://www.ars.usda.gov/Services/docs.htm?docid=23634).
 
 The following is a library to interact with the data with
-[Slick](http://slick.typesafe.com/)
+[Slick](http://slick.typesafe.com/) and
+[ElasticSearch](http://www.elasticsearch.org).
 
 ## Importing an existing database
 
     $ mysqladmin5 -u root create usda
-    $ bzip2 -dc usda-sr26.sql.bz2 | mysql5 -u root usda
+    $ bzip2 -dc usda-sr26.sql.bz2 | mysql -u root usda
 
 ## Running the test suite
 
@@ -98,7 +99,7 @@ Here were the instructions for importing the SR26 data into MySQL.
 
 ### Import into MySQL
 
-    $ mysql5 --local-infile -u root
+    $ mysql --local-infile -u root
     
     mysql> create database usda;
     Query OK, 1 row affected (0.00 sec)
